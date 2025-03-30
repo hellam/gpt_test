@@ -11,5 +11,6 @@ class Tenant extends Model
     protected $casts = [
         'config' => 'array',
     ];
+
 }
 

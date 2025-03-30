@@ -29,12 +29,20 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         $this->routes(function () {
+            // Superadmin Routes
             Route::middleware('api')
-                ->prefix('api')
-                ->group(base_path('routes/api.php'));
+                ->prefix('api/v1')
+                ->group(base_path('routes/api/v1/superadmin.php'));
 
-            Route::middleware('web')
-                ->group(base_path('routes/web.php'));
+            // Future: Tenant Routes
+            // Route::middleware('api')
+            //     ->prefix('api/v1/{tenant}')
+            //     ->group(base_path('routes/api/v1/tenant.php'));
+
+            // Future: Web Routes
+            // Route::middleware('web')
+            //     ->group(base_path('routes/web.php'));
         });
     }
+
 }

@@ -22,7 +22,14 @@ class TenantController extends Controller
             'subdomain' => 'nullable|string|unique:tenants,subdomain',
         ]);
 
+        // Generate subdomain from name if not provided
         $data['subdomain'] = $data['subdomain'] ?? Str::slug($data['name']);
+
+        // Basic subdomain DNS test (optional)
+//         if (!checkdnsrr("{$data['subdomain']}.ecobillafrica.com", 'A')) {
+//             return response()->json(['message' => 'Subdomain not live yet.'], 422);
+//         }
+
         $tenant = Tenant::create($data);
 
         return response()->json([

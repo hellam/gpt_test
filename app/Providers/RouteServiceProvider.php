@@ -29,6 +29,10 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         $this->routes(function () {
+            Route::middleware('api')
+                ->prefix('api/v1')
+                ->group(base_path('routes/api/v1/ping.php'));
+
             // Superadmin Routes
             Route::middleware('api')
                 ->prefix('api/v1/superadmin')

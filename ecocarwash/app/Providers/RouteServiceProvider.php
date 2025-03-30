@@ -31,7 +31,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->routes(function () {
             // Superadmin Routes
             Route::middleware('api')
-                ->prefix('api/v1')
+                ->prefix('api/v1/superadmin')
                 ->group(base_path('routes/api/v1/superadmin.php'));
 
             // Future: Tenant Routes

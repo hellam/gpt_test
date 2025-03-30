@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Superadmin\AlertController;
 use App\Http\Controllers\Superadmin\AuthController;
+use App\Http\Controllers\Superadmin\ProfileController;
 use App\Http\Controllers\Superadmin\TenantController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -9,6 +10,11 @@ use App\Http\Controllers\Superadmin\DashboardController;
 
 Route::post('login', [AuthController::class, 'login']);
 Route::middleware(['auth:api', 'issuperadmin'])->group(function () {
+    Route::prefix('profile')->group(function () {
+        Route::get('/', [ProfileController::class, 'show']);
+        Route::put('/', [ProfileController::class, 'update']);
+        Route::put('/password', [ProfileController::class, 'changePassword']);
+    });
     Route::get('dashboard', [DashboardController::class, 'index']);
     Route::get('alerts', [AlertController::class, 'index']);
     Route::prefix('tenants')->group(function () {

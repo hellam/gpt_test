@@ -40,7 +40,7 @@ class RouteServiceProvider extends ServiceProvider
 
             // Future: Tenant Routes
              Route::middleware('api')
-                 ->prefix('api/v1/{tenant}')
+                 ->prefix('api/v1')
                  ->group(base_path('routes/api/v1/tenant.php'));
 
             // Future: Web Routes

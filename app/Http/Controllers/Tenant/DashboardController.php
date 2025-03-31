@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Tenant;
 
+namespace App\Http\Controllers\Tenant;
+
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Carbon;
 
 class DashboardController extends Controller
 {
@@ -50,4 +51,3 @@ class DashboardController extends Controller
         ]);
     }
 }
-

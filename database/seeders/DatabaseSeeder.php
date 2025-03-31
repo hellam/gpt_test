@@ -18,12 +18,19 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+//        \App\Models\User::create([
+//            'name' => 'Super Admin',
+//            'email' => 'admin@ecobillcarwash.com',
+//            'password' => bcrypt('admin1234'),
+//            'role' => 'superadmin',
+//        ]);
         \App\Models\User::create([
-            'name' => 'Super Admin',
-            'email' => 'admin@ecobillcarwash.com',
-            'password' => bcrypt('admin1234'),
-            'role' => 'superadmin',
+            'name' => 'Eco Boss',
+            'email' => 'tenantadmin@ecowash.com',
+            'password' => bcrypt('secret123'),
+            'role' => 'tenant_admin',
         ]);
+
 
     }
 }

@@ -39,9 +39,9 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/api/v1/superadmin.php'));
 
             // Future: Tenant Routes
-            // Route::middleware('api')
-            //     ->prefix('api/v1/{tenant}')
-            //     ->group(base_path('routes/api/v1/tenant.php'));
+             Route::middleware('api')
+                 ->prefix('api/v1/{tenant}')
+                 ->group(base_path('routes/api/v1/tenant.php'));
 
             // Future: Web Routes
             // Route::middleware('web')

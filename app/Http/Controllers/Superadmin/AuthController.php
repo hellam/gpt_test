@@ -24,7 +24,7 @@ class AuthController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if (!$user || !password_verify($request->password, $user->password)) {
-            return response()->json(['message' => 'Invalid credentials.'], 401);
+            return response()->json(['message' => 'Invalid credentials.'], 400);
         }
 
         if (!$user->isSuperadmin()) {

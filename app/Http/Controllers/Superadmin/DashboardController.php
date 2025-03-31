@@ -1,4 +1,10 @@
 <?php
+/**
+ * @OA\Tag(
+ *     name="Dashboard",
+ *     description="Superadmin dashboard routes"
+ * )
+ */
 
 namespace App\Http\Controllers\Superadmin;
 
@@ -8,6 +14,18 @@ use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
+    /**
+     * @OA\Get(
+     *     path="/api/v1/superadmin/dashboard",
+     *     summary="View superadmin dashboard",
+     *     tags={"Dashboard"},
+     *     security={{"bearerAuth":{}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Dashboard data returned"
+     *     )
+     * )
+     */
     public function index()
     {
         $user = auth('api')->user();
